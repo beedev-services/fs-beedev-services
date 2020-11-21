@@ -1,11 +1,11 @@
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('user_project').del()
+  return knex('projects').del()
     .then(function () {
       // Inserts seed entries
-      return knex('user_project').insert([
-        {user_id: 1, project_id: 1}
+      return knex('projects').insert([
+        {projectName: 'LAH Photography', current_status: 'Finished'}
       ]);
     });
 };

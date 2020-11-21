@@ -8,23 +8,33 @@ exports.up = function(knex) {
       tbl.string('role').notNullable().defaultTo('Client');
       tbl.string('firstName');
       tbl.string('lastName');
+      tbl.string('companyName').unique().notNullable();
       tbl.string('email').notNullable();
       tbl.string('phone').unique();
   })
-  .createTable('types', tbl => {
+  .createTable('packageTypes', tbl => {
       tbl.increments();
       tbl.string('type').unique();
   })
-  .createTable('status', tbl => {
+  .createTable('projectStatus', tbl => {
     tbl.increments();
-    tbl.string('status').notNullable().unique();
+    tbl.string('currentStatus').notNullable().unique();
 })
+  .createTable('paidStatus', tbl => {
+    tbl.increments();
+    tbl.string('billStatus').unique().notNullable();
+  })
+  .createTable('payFreq', tbl => {
+    tbl.increments();
+    tbl.string('frequency').unique().notNullable();
+  })
   .createTable('pkgs', tbl => {
       tbl.increments();
-      tbl.integer('type_id').unsigned().notNullable().references('id').inTable('types').onUpdate('CASCADE').onDelete('CASCADE');
+      tbl.string('pkgType').unsigned().notNullable().references('type').inTable('packageTypes').onUpdate('CASCADE').onDelete('CASCADE');
       tbl.string('package');
-      tbl.string('name');
+      tbl.string('packageName').unique();
       tbl.string('price');
+      tbl.string('pay_frequency').unsigned().notNullable().references('frequency').inTable('payFreq').onUpdate('CASCADE').onDelete('CASCADE');
       tbl.string('line01');
       tbl.string('line02');
       tbl.string('line03');
@@ -34,26 +44,43 @@ exports.up = function(knex) {
   .createTable('projects', tbl => {
       tbl.increments();
       tbl.string('projectName').notNullable().unique();
-      tbl.integer('status_id').unsigned().notNullable().references('id').inTable('status').onUpdate('CASCADE').onDelete('CASCADE');
+      tbl.string('current_status').unsigned().notNullable().references('currentStatus').inTable('projectStatus').onUpdate('CASCADE').onDelete('CASCADE');
       tbl.string('gitLink').unique();
       tbl.string('testSite').unique();
       tbl.string('liveLink').unique();
       tbl.string('extraLink01').unique();
       tbl.string('extraLink02').unique();
   })
+  .createTable('invoices', tbl => {
+    tbl.increments();
+    tbl.string('company').unsigned().notNullable().references('companyName').inTable('users').onUpdate('CASCADE').onDelete('CASCADE');
+    tbl.integer('invoice').unique().notNullable();
+    tbl.string('invoiceStatus').unsigned().notNullable().references('billStatus').inTable('paidStatus').onUpdate('CASCADE').onDelete('CASCADE');
+    tbl.string('datePaid');
+    tbl.boolean('overDue').defaultTo(0);
+  })
   .createTable('user_project', tbl => {
-      tbl.integer('user_id').unsigned().notNullable().references('id').inTable('users');
-      tbl.integer('project_id').unsigned().notNullable().references('id').inTable('projects');
-      tbl.primary(['user_id', 'project_id']);
+      tbl.string('company_name').unsigned().notNullable().references('companyName').inTable('users');
+      tbl.string('project_name').unsigned().notNullable().references('projectName').inTable('projects');
+      tbl.primary(['company_name', 'project_name']);
+  })
+  .createTable('user_package', tbl => {
+    tbl.string('user_company').unsigned().notNullable().references('companyName').inTable('users');
+    tbl.string('pkgs_purchased').unsigned().notNullable().references('packageName').inTable('pkgs');
+    tbl.primary(['user_company', 'pkgs_purchased']);
   })
 };
 
 exports.down = function(knex) {
   return knex.schema
+  .dropTableIfExists('user_package')
   .dropTableIfExists('user_project')
+  .dropTableIfExists('invoices')
   .dropTableIfExists('projects')
   .dropTableIfExists('pkgs')
-  .dropTableIfExists('status')
-  .dropTableIfExists('types')
+  .dropTableIfExists('payFreq')
+  .dropTableIfExists('paidStatus')
+  .dropTableIfExists('projectStatus')
+  .dropTableIfExists('packageTypes')
   .dropTableIfExists('users')
 };

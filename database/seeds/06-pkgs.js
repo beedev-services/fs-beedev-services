@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('pkgs').insert([
-        {type_id: 1, package: '#1', name: 'Test Package'}
+        {pkgType: 'Internal', package: '#1', packageName: 'Test Package', pay_frequency: 'One Time'}
       ]);
     });
 };

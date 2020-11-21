@@ -9,11 +9,8 @@ const knexSessionStore = require('connect-session-knex')(session)
 const authenticate = require('./auth/authenticate')
 const Auth = require('./users/authRouter')
 const User = require('./users/userRouter')
-// const Packages = require('./packages/pkgRouter')
-// const Types = require('./extraRouters/typesRouter')
-// const Status = require('./extraRouters/statusRouter')
+const Packages = require('./packages/pkgRouter')
 // const Projects = require('./projects/projectsRouter')
-// const Assigned = require('./extraRouters/user-projectRouter')
 
 // Server set up
 const server = express()
@@ -48,12 +45,11 @@ server.use(session(sessionConfig));
 
 // API paths
 server.use('/api/auth', Auth)
-server.use('/api/users', authenticate, User)
-// server.use('/api/packages', Packages)
-// server.use('/api/types', Types)
-// server.use('/api/status', authenticate, Status)
-// server.use('/api/projects', authenticate, Projects)
-// server.use('/api/assigned', authenticate, Assigned)
+server.use('/api/users', User)
+server.use('/api/packages', Packages)
+// server.use('/api/projects', Projects)
+// server.use('/api/billing', Billing)
+
 
 server.get('/', (req, res) => {
     res.json({ message: 'Server is running'})
