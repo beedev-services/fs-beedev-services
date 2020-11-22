@@ -10,7 +10,9 @@ const authenticate = require('./auth/authenticate')
 const Auth = require('./users/authRouter')
 const User = require('./users/userRouter')
 const Packages = require('./packages/pkgRouter')
-// const Projects = require('./projects/projectsRouter')
+const Projects = require('./projects/projectsRouter')
+const Billing = require('./billing/billingRouter')
+const Company = require('./company/companyRouter')
 
 // Server set up
 const server = express()
@@ -47,8 +49,9 @@ server.use(session(sessionConfig));
 server.use('/api/auth', Auth)
 server.use('/api/users', User)
 server.use('/api/packages', Packages)
-// server.use('/api/projects', Projects)
-// server.use('/api/billing', Billing)
+server.use('/api/projects', Projects)
+server.use('/api/billing', Billing)
+server.use('/api/company', Company)
 
 
 server.get('/', (req, res) => {

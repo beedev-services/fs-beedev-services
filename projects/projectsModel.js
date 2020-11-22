@@ -2,32 +2,32 @@ const db = require("../database/db-config.js");
 
 module.exports = {
     findAll,
-    findAllBill,
+    findAllProjectStats,
     findBy,
-    findByBill,
+    findByProjectStats,
     findByName,
-    findByBillStatus,
+    findByProjectStatus,
     add,
-    addBill,
+    addProjectStats,
     update,
-    updateBill,
+    updateProjectStats,
     remove,
-    removeBill
+    removeProjectStats
 };
 
 function findAll() {
     return db("projects");
 }
-function findAllBill() {
-    return db("paidStatus");
+function findAllProjectStats() {
+    return db("projectStatus");
 }
 
 function findBy(filter) {
     return db("projects")
     .where(filter).first();
 }
-function findByBill(filter) {
-    return db("paidStatus")
+function findByProjectStats(filter) {
+    return db("projectStatus")
     .where(filter).first();
 }
 
@@ -35,20 +35,20 @@ function findByName(projectName) {
     return db("projects")
     .where({projectName}).first();
 }
-function findByBillStatus(billStatus) {
-    return db("paidStatus")
-    .where({billStatus}).first();
+function findByProjectStatus(currentStatus) {
+    return db("projectStatus")
+    .where({currentStatus}).first();
 }
 
 function add(projectName) {
     return db("projects")
-    .insert(projectName, "id")
+    .insert(projectName, "projectName")
     .then(ids => findByName(ids[0]));
 }
-function addBill(billStatus) {
-    return db("paidStatus")
-    .insert(billStatus, "billStatus")
-    .then(ids => findByBillStatus(ids[0]));
+function addProjectStats(currentStatus) {
+    return db("projectStatus")
+    .insert(currentStatus, "currentStatus")
+    .then(ids => findByProjectStatus(ids[0]));
 }
 
 function update(projectName, changes) {
@@ -56,9 +56,9 @@ function update(projectName, changes) {
         .where({ projectName })
         .update(changes, '*')
 }
-function updateBill(billStatus, changes) {
-    return db("paidStatus")
-    .where({ billStatus })
+function updateProjectStats(currentStatus, changes) {
+    return db("projectStatus")
+    .where({ currentStatus })
     .update(changes, '*')
 }
 
@@ -66,8 +66,8 @@ function remove(id) {
     return db("projects")
     .where({ id }).del();
 }
-function removeBill(id) {
-    return db("paidStatus")
+function removeProjectStats(id) {
+    return db("projectStatus")
     .where({ id }).del();
 }
 
