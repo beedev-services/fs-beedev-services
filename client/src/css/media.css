@@ -1,0 +1,31 @@
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexcolumnalt {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.center {
+  margin: auto;
+}
+@media only screen and (min-width: 1050px) {
+  #root .main nav {
+    width: 95%;
+  }
+  #root .main nav .nav-small {
+    display: none;
+  }
+  #root .main nav .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

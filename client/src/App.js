@@ -1,63 +1,30 @@
 import React from 'react'
 
-import './App.css'
+import './css/core.css'
+
+import NavBar from './components/nav/NavBar'
+import SmallNav from './components/nav/NavBarSmall'
 
 const App = () => {
+      //<!--Start of Tawk.to Script-->
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/5e75be618d24fc2265891178/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+      })();
+      //<!--End of Tawk.to Script-->
+
   return (
-    <div className="App">
-      {/* Remove everything from this line to line 37 */}
-      <div className="image-container">
-        <img
-          alt="Lambda loves our llamas!"
-          src="https://assets-global.website-files.com/5cd091cfb5499f22bdf72905/5dcda59e63bb6ae5c9282801_small-red-logo.png"
-        ></img>
-      </div>
-      <h2>
-        Welcome <p className="welcome-bottom">Lambda student!</p>
-      </h2>
-      <h4>Your React Application is Ready</h4>
-      <h4>Now go work your magic!</h4>
-      <p className="filler-text">This is filler, no need to keep it!</p>
-      <div className="footer">
-        <a
-          href="https://lambdaschool.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit the Lambda Llama home
-        </a>
-        <br />
-        <div>
-          <p>Created using Create-React-App</p>
-          <p>Modified and maintained by Lambda School graduate Zac Smith</p>
-          <p>
-            <a
-              href="https://github.com/mrzacsmith"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Github
-            </a>{" "}
-            ::{" "}
-            <a
-              href="https://www.npmjs.com/~mrzacsmith"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NPM
-            </a>{" "}
-            ::{" "}
-            <a
-              href="https://twitter.com/mrzacsmith"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </p>
-        </div>
-      </div>
-      {/* Remove everything from line 8 to here */}
+    <div className='main'>
+      <nav>
+        <img src="https://images.craftsnherbs.com/beedev/beedev.png" alt="business Logo"/>
+        <NavBar />
+        <SmallNav />
+      </nav>
     </div>
   );
 };
