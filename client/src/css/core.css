@@ -31,6 +31,9 @@
   align-items: center;
   background-color: #808080;
 }
+#root .main footer {
+  background-color: #808080;
+}
 .flexrow {
   display: flex;
   flex-direction: row;
@@ -50,7 +53,95 @@
   margin: auto;
 }
 @media only screen and (min-width: 1050px) {
+  #root .main nav {
+    width: 95%;
+  }
   #root .main nav .nav-small {
     display: none;
+  }
+  #root .main nav .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+  #root .main nav .navbar .nav-option {
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0.5em;
+  }
+  #root .main nav .navbar .clicked {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #ecdf3a;
+    padding: 0.2em 1em;
+  }
+  #root .main .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #root .main .content .home-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #root .main .content .home-imgs #beeline {
+    width: 45%;
+  }
+  #root .main .content .home-imgs #heading {
+    width: 50%;
+  }
+  #root .main .content .home-imgs .questions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #root .main .content .home-imgs .questions .question-head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #root .main .content .home-imgs .questions .question-head #questions {
+    width: 60%;
+  }
+  #root .main .content .home-imgs .questions .question-head #bee {
+    width: 5%;
+    margin: 0.5em;
+  }
+  #root .main .content .home-imgs .questions p {
+    width: 60%;
+    font-size: 1.2em;
+  }
+  #root .main footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95%;
+    margin: 0.2em;
+    padding: 0.5em;
+  }
+  #root .main footer span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0.2em;
+  }
+  #root .main footer span img {
+    width: 20%;
+  }
+  #root .main footer span .img {
+    width: 10%;
+  }
+  #root .main footer span #veteran {
+    width: 15%;
   }
 }
