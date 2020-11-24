@@ -6,7 +6,7 @@ const Home = () => {
         <h1>Let our Hive make a difference!!</h1>
         <div className='home-imgs'>
             {/* <img src='https://images.craftsnherbs.com/beedev/webdev.png' alt='BeeDev Header' id='heading' /> */}
-            <img src="https://images.craftsnherbs.com/beedev/webdev.png" usemap="#image-map" id='heading' />
+            <img src="https://images.craftsnherbs.com/beedev/webdev.png" usemap="#image-map" id='heading' alt='' />
 
             <map name="image-map">
                 <area alt="services" href="/Services" coords="216,35,172,107,216,185,307,185,350,111,303,34" shape="poly" className='webdev' />
