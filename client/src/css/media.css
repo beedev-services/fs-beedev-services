@@ -60,6 +60,12 @@
   #root .main .content .home-imgs #heading {
     width: 50%;
   }
+  #root .main .content .home-imgs map .webdev {
+    border: none;
+  }
+  #root .main .content .home-imgs map .webdev:hover {
+    border: 2px groove #3e8e95;
+  }
   #root .main .content .home-imgs .questions {
     display: flex;
     flex-direction: column;

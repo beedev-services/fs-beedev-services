@@ -4,6 +4,7 @@
 @borderbg: #ecdf3a;
 @alt: #a6a267;
 @img: #3e8e95;
+@imgborder: 2px groove @img;
 @1050: ~"only screen and (min-width: 1050px)";
 @850: ~"only screen and (min-width: 850px)";
 @730: ~"only screen and (min-width: 730px)";
@@ -64,6 +65,14 @@
                     }
                     #heading {
                         width: 50%;
+                    }
+                    map {
+                        .webdev {
+                            border: none;
+                            &:hover {
+                                border: @imgborder;
+                            }
+                        }
                     }
                     .questions {
                         .flexcolumn();
