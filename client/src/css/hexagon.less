@@ -1,0 +1,48 @@
+.img {
+    background-image: url('https://images.craftsnherbs.com/beedev/altwebdev.png');
+    width: 800px;
+    height: 300px;
+    .hexagon {
+        top: 65px;
+        left: 275px;
+        width: 90px;
+        height: 152px;
+        position: relative;
+        background: #ecdf3a;
+        box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        &:hover {
+            z-index: 2;
+            background-image: url('https://images.craftsnherbs.com/beedev/flyingbee.gif')
+        }
+
+        &:before,
+        &:after {
+            background: #ecdf3a;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+            content: "";
+            position: absolute;
+            top: 33px;
+            width: 87px;
+            height: 87px;
+            transform: rotate(55deg) skew(24deg);
+
+        }
+        &:before {
+            left: -44px;
+        }
+        &:after {
+            left: 46px;
+        }
+        span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 90px;
+            height: 152px;
+            background: #ecdf3a;
+            z-index: 1;
+
+        }
+
+    }
+}
