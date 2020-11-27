@@ -35,6 +35,7 @@
         .main {
             nav {
                 width: 95%;
+
                 .nav-small {
                     display: none;
                 }
@@ -42,6 +43,7 @@
                     .flexrow();
                     justify-content: space-around;
                     width: 100%;
+
                     .nav-option {
                         text-decoration: underline;
                         cursor: pointer;
@@ -58,29 +60,19 @@
             }
             .content {
                 .flexcolumn();
+
                 .home-imgs {
                     .flexcolumn();
+
                     #beeline {
                         width: 45%;
                     }
-                    #heading {
-                        width: 50%;
-                    }
-                    map {
-                        .webdev {
-                            border: none;
-                            &:hover {
-                                border: @imgborder;
-                            }
-                        }
-                    }
                     .questions {
                         .flexcolumn();
+
                         .question-head {
                             .flexrow();
-                            #questions {
-                                width: 60%;
-                            }
+
                             #bee {
                                 width: 5%;
                                 margin: .5em;
@@ -89,6 +81,9 @@
                         p {
                             width: 60%;
                             font-size: 1.2em;
+                        }
+                        .question-main {
+                            .flexcolumn();
                         }
                     }
                 }
@@ -99,10 +94,12 @@
                 width: 95%;
                 margin: .2em;
                 padding: .5em;
+
                 span {
                     .flexrow();
                     justify-content: space-evenly;
                     margin: .2em;
+
                     img {
                         width: 20%;
                     }
