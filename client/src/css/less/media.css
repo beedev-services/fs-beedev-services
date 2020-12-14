@@ -54,22 +54,11 @@
     justify-content: center;
     align-items: center;
   }
-  #root .main .content .home-imgs .webdev {
-    width: 800px;
-    height: 300px;
-    background-image: url('https://images.craftsnherbs.com/beedev/webdev.png');
-  }
-  #root .main .content .home-imgs .overlay {
-    background-image: url('https://images.craftsnherbs.com/beedev/flyingbee.gif');
-    height: 100%;
-    width: 100%;
-    opacity: 0.7;
-    background-repeat: repeat;
-    position: absolute;
-    top: -10px;
+  #root .main .content .home-imgs #webdev {
+    max-width: 700px;
   }
   #root .main .content .home-imgs #beeline {
-    width: 45%;
+    max-width: 700px;
   }
   #root .main .content .home-imgs .questions {
     display: flex;
@@ -77,24 +66,34 @@
     justify-content: center;
     align-items: center;
   }
+  #root .main .content .home-imgs .questions p {
+    width: 60%;
+    font-size: 1.2em;
+  }
   #root .main .content .home-imgs .questions .question-head {
     display: flex;
     flex-direction: row;
     align-items: center;
   }
   #root .main .content .home-imgs .questions .question-head #bee {
-    width: 5%;
+    width: 8%;
     margin: 0.5em;
-  }
-  #root .main .content .home-imgs .questions p {
-    width: 60%;
-    font-size: 1.2em;
   }
   #root .main .content .home-imgs .questions .question-main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  #root .main .content .home-imgs .questions .question-main #develop,
+  #root .main .content .home-imgs .questions .question-main #maintain,
+  #root .main .content .home-imgs .questions .question-main #repair {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    width: 90%;
   }
   #root .main footer {
     display: flex;

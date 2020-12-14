@@ -57,10 +57,10 @@ const App = () => {
       </div>
       <footer>
         <span>
-          <img src='https://images.craftsnherbs.com/beelogo.jpg' alt="" className='img' />
+          <img src='https://images.craftsnherbs.com/beelogo.jpg' alt="" id='code' />
           &#169; 2020 BeeDev Services
         </span>
-        <span>
+        <span id='social'>
           <img src='https://images.craftsnherbs.com/veteranlogo.jpg' alt='' id='veteran' />
           <a href="https://github.com/beedev-services" target="_blank" rel="noreferrer"><img src='https://images.craftsnherbs.com/beedev/github.png' alt="github" className="social" /></a>
         </span>

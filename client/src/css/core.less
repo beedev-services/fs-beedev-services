@@ -1,50 +1,85 @@
-@navbg: #808080;
-@mainbg: #fcf8d9;
-@font: #2c1c17;
-@borderbg: #ecdf3a;
-@alt: #a6a267;
-@img: #3e8e95;
-@border: 6px groove @borderbg;
-@altborder: 4px groove @alt;
-@border2: 4px groove @font;
-@imgborder: 2px groove @img;
-@1050: ~"only screen and (min-width: 1050px)";
-@850: ~"only screen and (min-width: 850px)";
-@730: ~"only screen and (min-width: 730px)";
-@530: ~"only screen and (min-width: 530px)";
-@400: ~"only screen and (min-width: 400px)";
-
-.flexrow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.flexcolumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.flexcolumnalt {
-    display: flex;
-    flex-direction: column-reverse;
-}
-.center {
-    margin: auto;
-}
+@import 'less/base.less';
 
 #root {
     background-color: @mainbg;
     .main {
         .flexcolumn();
         nav {
-            .flexrow();
+            .flexcolumn();
             background-color: @navbg;
+            width: 95%;
+            .navbar {
+                display: none;
+            }
+            .nav-small {
+                display: flex;
+
+                .button {
+                    background-color: @navbg;
+                    margin: .5em;
+                    font-size: 1.2em;;
+                }
+            }
+        }
+        .content {
+            .flexcolumn();
+            width: 95%;
+            text-align: center;
+
+            .home-imgs {
+                .flexcolumn();
+                width: 95%;
+
+                #webdev {
+                    width: 95%;
+                }
+                #beeline {
+                    width: 99%;
+                }
+                .questions {
+                    .flexcolumn();
+
+                    .question-head {
+                        .flexrow();
+
+                        #bee {
+                            width: 30%;
+                            margin: .2em;
+                        }
+                    }
+                }
+            }
         }
         footer {
             background-color: @navbg;
+            width: 95%;
+            .flexcolumn();
+
+            span {
+                .flexrow();
+                justify-content: space-evenly;
+                margin: .2em;
+
+                #code {
+                    width: 20%;
+                }
+            }
+            #social {
+                .flexrow();
+                justify-content: space-evenly;
+                margin: .2em;
+
+                #veteran {
+                    width: 30%;
+                    margin: .2em 1.5em;
+                }
+                .social {
+                    width: 20%;
+                    margin: .2em 1.5em;
+                }
+            }
         }
     }
 }
 
-@import 'media.less';
+@import 'less/media.less';

@@ -1,34 +1,4 @@
-@navbg: #808080;
-@mainbg: #fcf8d9;
-@font: #2c1c17;
-@borderbg: #ecdf3a;
-@alt: #a6a267;
-@img: #3e8e95;
-@imgborder: 2px groove @img;
-@1050: ~"only screen and (min-width: 1050px)";
-@850: ~"only screen and (min-width: 850px)";
-@730: ~"only screen and (min-width: 730px)";
-@530: ~"only screen and (min-width: 530px)";
-@400: ~"only screen and (min-width: 400px)";
-
-.flexrow {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.flexcolumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.flexcolumnalt {
-    display: flex;
-    flex-direction: column-reverse;
-}
-.center {
-    margin: auto;
-}
+@import 'base.less';
 
 @media @1050 {
     #root {
@@ -63,41 +33,38 @@
 
                 .home-imgs {
                     .flexcolumn();
-                    .webdev {
-                        width: 800px;
-                        height: 300px;
-                        background-image: url('https://images.craftsnherbs.com/beedev/webdev.png');
-                    }
-                    .overlay {
-                        background-image: url('https://images.craftsnherbs.com/beedev/flyingbee.gif');
-                        height: 100%;
-                        width: 100%;
-                        opacity: .7;
-                        background-repeat: repeat;
-                        position: absolute;
-                        top: -10px;
-                    }
 
+                    #webdev {
+                        max-width: 700px;
+                    }
                     #beeline {
-                        width: 45%;
+                        max-width: 700px;
                     }
                     .questions {
                         .flexcolumn();
 
-                        .question-head {
-                            .flexrow();
-
-                            #bee {
-                                width: 5%;
-                                margin: .5em;
-                            }
-                        }
                         p {
                             width: 60%;
                             font-size: 1.2em;
                         }
+                        .question-head {
+                            .flexrow();
+
+                            #bee {
+                                width: 8%;
+                                margin: .5em;
+                            }
+                        }
                         .question-main {
                             .flexcolumn();
+                            
+                            #develop,
+                            #maintain,
+                            #repair {
+                                .flexcolumn();
+                                margin: .5em;
+                                width: 90%;
+                            }
                         }
                     }
                 }
