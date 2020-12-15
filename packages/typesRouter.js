@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Types = require('./typesModel')
 
 
-// Base path /api/packages
+// Base path /api/admin/types
 
 router.get('/', (req, res, next) => {
     Types.findAll()

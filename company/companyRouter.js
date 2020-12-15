@@ -3,8 +3,6 @@ const Join = require('./companyModel')
 
 // base URL/api/company
 
-
-
 // Get Requests
 router.get('/projects', (req, res, next) => {
     Join.findCoProjects()
@@ -17,7 +15,7 @@ router.get('/packages', (req, res, next) => {
     .catch(err => next({ code: 500, message: 'Error getting user packages', err}))
 })
 
-// Gety by requests
+// Get by requests
 router.get('/projects/:company_name', (req, res) => {
     Join.findByCoNameProject(req.params.company_name)
     .then(projects => {

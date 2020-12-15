@@ -14,8 +14,14 @@
             .nav-small {
                 display: flex;
 
+                .nav-option {
+                    cursor: pointer;
+                    font-size: 1.2em;
+                    padding: .5em;
+                }
+
                 .button {
-                    background-color: @navbg;
+                    background-color: @mainbg;
                     margin: .5em;
                     font-size: 1.2em;;
                 }
@@ -46,6 +52,20 @@
                             width: 30%;
                             margin: .2em;
                         }
+                    }
+                }
+            }
+            .about {
+                .flexcolumn();
+
+                .about-owner {
+                    .flexrow();
+                    justify-content: center;
+
+                    #owner {
+                        width: 25%;
+                        border-radius: 40%;
+                        margin: 0 1em;
                     }
                 }
             }

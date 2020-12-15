@@ -10,33 +10,33 @@ module.exports = {
 };
 
 function findAll() {
-    return db("types");
+    return db("packageTypes");
 }
 
 function findBy(filter) {
-    return db("types")
+    return db("packageTypes")
     .where(filter).first();
 }
 
 function findById(id) {
-    return db("types")
+    return db("packageTypes")
     .where({id}).first();
 }
 
 function add(type) {
-    return db("types")
+    return db("packageTypes")
     .insert(type, "id")
     .then(ids => findById(ids[0]));
 }
 
 function update(id, changes) {
-    return db("types")
+    return db("packageTypes")
         .where({ id })
         .update(changes, '*')
 }
 
 function remove(id) {
-    return db("types")
+    return db("packageTypes")
     .where({ id }).del();
 }
 

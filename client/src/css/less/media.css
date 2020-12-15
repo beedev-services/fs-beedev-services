@@ -16,7 +16,22 @@
 .center {
   margin: auto;
 }
-@media only screen and (min-width: 1050px) {
+@media only screen and (min-width: 400px) {
+  #root .main .content .home-imgs .questions .question-head #bee {
+    max-width: 100px;
+  }
+}
+@media only screen and (min-width: 430px) {
+  #root .main .content .home-imgs .questions .question-head {
+    align-self: flex-start;
+  }
+}
+@media only screen and (min-width: 530px) {
+  #root .main .content .about .about-owner #owner {
+    max-width: 247px;
+  }
+}
+@media only screen and (min-width: 730px) {
   #root .main nav {
     width: 95%;
   }
@@ -42,6 +57,22 @@
     background-color: #ecdf3a;
     padding: 0.2em 1em;
   }
+  #root .main .content .home-imgs #webdev {
+    max-width: 700px;
+  }
+  #root .main .content .home-imgs #beeline {
+    max-width: 650px;
+  }
+  #root .main .content .home-imgs .questions {
+    max-width: 675px;
+  }
+}
+@media only screen and (min-width: 850px) {
+  #root .main .content .about {
+    width: 800px;
+  }
+}
+@media only screen and (min-width: 1050px) {
   #root .main .content {
     display: flex;
     flex-direction: column;
@@ -67,7 +98,6 @@
     align-items: center;
   }
   #root .main .content .home-imgs .questions p {
-    width: 60%;
     font-size: 1.2em;
   }
   #root .main .content .home-imgs .questions .question-head {
@@ -76,7 +106,6 @@
     align-items: center;
   }
   #root .main .content .home-imgs .questions .question-head #bee {
-    width: 8%;
     margin: 0.5em;
   }
   #root .main .content .home-imgs .questions .question-main {

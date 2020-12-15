@@ -1,6 +1,56 @@
 @import 'base.less';
 
-@media @1050 {
+@media @400 {
+    #root {
+        .main {
+            .content {
+                .home-imgs {
+                    .questions {
+                        .question-head {
+                            #bee {
+                                max-width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @430 {
+    #root {
+        .main {
+            .content {
+                .home-imgs {
+                    .questions {
+                        .question-head {
+                            align-self: flex-start;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @530 {
+    #root {
+        .main {
+            .content {
+                .about {
+                    .about-owner {
+                        #owner {
+                            max-width: 247px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @730 {
     #root {
         .main {
             nav {
@@ -29,6 +79,38 @@
                 }
             }
             .content {
+                .home-imgs{
+                    #webdev {
+                        max-width: 700px;
+                    }
+                    #beeline {
+                        max-width: 650px;
+                    }
+                    .questions {
+                        max-width: 675px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media @850 {
+    #root {
+        .main {
+            .content {
+                .about {
+                    width: 800px;
+                }
+            }
+        }
+    }
+}
+
+@media @1050 {
+    #root {
+        .main {
+            .content {
                 .flexcolumn();
 
                 .home-imgs {
@@ -44,14 +126,12 @@
                         .flexcolumn();
 
                         p {
-                            width: 60%;
                             font-size: 1.2em;
                         }
                         .question-head {
                             .flexrow();
 
                             #bee {
-                                width: 8%;
                                 margin: .5em;
                             }
                         }

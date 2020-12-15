@@ -13,6 +13,13 @@ const Packages = require('./packages/pkgRouter')
 const Projects = require('./projects/projectsRouter')
 const Billing = require('./billing/billingRouter')
 const Company = require('./company/companyRouter')
+// const Invoice = require('./billing/invoiceRouter')
+
+const Admin = require('./admin')
+const Status = require('./projects/statusRouter')
+const Types = require('./packages/typesRouter')
+// const Paid = require('./billing/paidRouter')
+// const Freq = require('./billing/freqRouter')
 
 // Server set up
 const server = express()
@@ -52,7 +59,13 @@ server.use('/api/packages', Packages)
 server.use('/api/projects', Projects)
 server.use('/api/billing', Billing)
 server.use('/api/company', Company)
+// server.use('/api/company/billing', Invoice)
 
+server.use('/api', Admin)
+server.use('/api/admin/types', Types)
+server.use('/api/admin/status', Status)
+// server.use('/api/admin/paystatus', Paid)
+// server.use('/api/admin/frequency', Freq)
 
 server.get('/', (req, res) => {
     res.json({ message: 'Server is running'})
