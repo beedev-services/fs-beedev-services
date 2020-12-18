@@ -1,38 +1,31 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import Packages from './packages/Packages'
+import MiniNav from './nav/MiniNav'
+import ServicesNav from './nav/ServicesNav'
+
+import Classroom from './departments/Classroom'
+import Themes from './departments/Themes'
+import CFA from './departments/CodeForAmerica'
+import Service from './departments/Services'
 
 const Services = () => {
 
     return (
         <>
         <h1>The divisions of BeeDev Services</h1>
-        <div className='classroom'>
-            <h3>BeeDev Classroom</h3>
-            <hr></hr>
-            <p>A sub-division of BeeDev Services dedicated to teaching the art of Web Development</p>
-            <h4>Still Under Construction</h4>
-            <a href='https://classroom.beedev-services.com' target='_blank' rel='noreferrer'>BeeDev Classroom Website</a>
+        <MiniNav />
+        <ServicesNav />
+        <div className='classroom' id='classroom'>
+            <Classroom />
         </div>
-        <div className='Themes'>
-            <h3>BeeDev Themes</h3>
-            <hr></hr>
-            <p>A sub-division of pre-built themes available, including Wordpress Themese</p>
-            <h4>Still Under Construction</h4>
-            <a href='https://themes.beedev-services.com' target='_blank' rel='noreferrer'>BeeDev Themes Website</a>
+        <div className='Themes' id='themes'>
+            <Themes />
         </div>
-        <div className='cfa'>
-            <h3>Open Columbia County, PA</h3>
-            <hr></hr>
-            <p>A Code for America Brigade</p>
-            <p>This is a local network of volunteers who are putting technology to work at the benefit of our community</p>
-            <a href='#' target='_blank' rel='noreferrer'>Open Columbia County PA Website</a>
+        <div className='cfa' id='cfa'>
+            <CFA />
         </div>
-        <div className='services'>
-            <h3>BeeDev Services - The main Division</h3>
-            <hr></hr>
-            <p>Packages and other services for your business or other needs</p>
-            {/* <Packages /> */}
+        <div className='services' id='services'>
+            <Service />
         </div>
         </>
     )

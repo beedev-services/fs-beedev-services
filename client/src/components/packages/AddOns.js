@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Package from './Package'
 import withListLoading from './withListLoading'
 
-const url = 'http://localhost:5000/api/packages/Internal'
+const url = 'http://localhost:5000/api/packages/addons'
 
-const Internal = (props) => {
+const AddOns = (props) => {
 
     const ListLoading = withListLoading(Package)
     const [appState, setAppState] = useState ({
@@ -27,4 +27,4 @@ const Internal = (props) => {
         </>
     )
 }
-export default Internal
+export default AddOns
