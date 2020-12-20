@@ -13,6 +13,9 @@ import LogIn from './components/Login'
 import Services from './components/Services'
 import SignUp from './components/SignUp'
 
+import Dashboard from './components/private/Dashboard'
+import PrivateRoute from './components/private/PrivateRoute'
+
 const App = () => {
       // //<!--Start of Tawk.to Script-->
       // var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -44,12 +47,14 @@ const App = () => {
           <Route path='/Services'>
             <Services />
           </Route>
-          <Route path='/Company Log In'>
+          {/* <Route path='/Company Log In'>
             <LogIn />
-          </Route>
+          </Route> */}
           <Route path='/Sign Up'>
             <SignUp />
           </Route>
+          <Route path='/Company Log In' component={LogIn} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route exact path='/'>
             <Home />
           </Route>

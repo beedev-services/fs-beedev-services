@@ -15,6 +15,9 @@ const Services = () => {
         <h1>The divisions of BeeDev Services</h1>
         <MiniNav />
         <ServicesNav />
+        <div className='services' id='services'>
+            <Service />
+        </div>
         <div className='classroom' id='classroom'>
             <Classroom />
         </div>
@@ -23,9 +26,6 @@ const Services = () => {
         </div>
         <div className='cfa' id='cfa'>
             <CFA />
-        </div>
-        <div className='services' id='services'>
-            <Service />
         </div>
         </>
     )

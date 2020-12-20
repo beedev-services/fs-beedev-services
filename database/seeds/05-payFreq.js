@@ -8,7 +8,9 @@ exports.seed = function(knex) {
         {frequency: 'One Time'},
         {frequency: 'Monthly'},
         {frequency: 'Quarterly'},
-        {frequency: 'Yearly'}
+        {frequency: 'Yearly'},
+        {frequency: 'As Needed'},
+        {frequency: 'Flexable'}
       ]);
     });
 };
